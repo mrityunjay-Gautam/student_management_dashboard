@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Student Dashboard</h1>
+
+    <div id="login-section">
+      <button onclick="login()">Login with Google</button>
+    </div>
+
+    <div id="add-student-form" style="display: none;">
+      <h2>Add New Student</h2>
+      <form onsubmit="addStudent(event)">
+        <input type="text" id="name" placeholder="Student Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <select id="course" required>
+          <option value="">Select Course</option>
+          <option value="React">React</option>
+          <option value="Java">Java</option>
+        </select>
+        <button type="submit">Add Student</button>
+      </form>
+    </div>
+
+    <div id="filter-section">
+      <label for="filter">Filter by Course:</label>
+      <select id="filter" onchange="filterStudents()">
+        <option value="">All</option>
+        <option value="React">React</option>
+        <option value="Java">Java</option>
+      </select>
+    </div>
+
+    <ul id="student-list"></ul>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
